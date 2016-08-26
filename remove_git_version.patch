@@ -1,0 +1,20 @@
+--- a/Makefile
++++ b/Makefile
+@@ -105,13 +105,13 @@
+ endif
+ 
+ # === Version string ===
+-COMPTON_VERSION ?= git-$(shell git describe --always --dirty)-$(shell git log -1 --date=short --pretty=format:%cd)
++COMPTON_VERSION ?= 0.1
+ CFG += -DCOMPTON_VERSION="\"$(COMPTON_VERSION)\""
+ 
+-LDFLAGS ?= -Wl,-O1 -Wl,--as-needed
++LDFLAGS ?= ${RPM_LD_FLAGS}
+ 
+ ifeq "$(CFG_DEV)" ""
+-  CFLAGS ?= -DNDEBUG -O2 -D_FORTIFY_SOURCE=2
++  CFLAGS ?= ${RPM_OPT_FLAGS} -DNDEBUG
+ else
+   CC = clang
+   export LD_ALTEXEC = /usr/bin/ld.gold
+
