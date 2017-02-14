@@ -1,9 +1,9 @@
-%global     commit 2343e4bbd298b35ea5c190c52abd2b0cb9f79a18
+%global     commit b7f43ee67a1d2d08239a2eb67b7f50fe51a592a8
 %global     commit_short %(c=%{commit}; echo ${c:0:7})
 
 Name:		compton
 Version:	0.1
-Release:	1.%{commit_short}%{?dist}
+Release:	2.%{commit_short}%{?dist}
 Summary:	Compositor for X
 License:	MIT
 URL:		https://github.com/chjj/compton
@@ -64,5 +64,8 @@ fi
 %{_datadir}/icons/hicolor/*/apps/*
 
 %changelog
+* Tue Feb 14 2017 Vaughan <devel at agrez dot net> - 0.1-2.b7f43e
+- Update to git commit: b7f43ee67a1d2d08239a2eb67b7f50fe51a592a8
+
 * Fri Aug 26 2016 Vaughan <devel at agrez dot net> - 0.1-1.2343e4b
 - Import package
